@@ -1,0 +1,21 @@
+spring:
+   datasource:
+      url: jdbc:mysql://192.168.1.159:3306/chest?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+      username: root
+      password: root
+#   kafka:
+#      bootstrap-servers: localhost:9092
+#      producer:
+#         key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#         value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      consumer:
+         group-id: test
+         enable-auto-commit: true
+         auto-commit-interval: 1000
+         key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+         value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#自定义配置
+   rootpath: ${ROOT_PATH:Z:/} ##${}兼容docker
+   rooturl: http://${ROOT_URL:192.168.1.159}/
+   workerId: 0 #主键生成器服务ID(0~31)
+   dataCenterId: 0 #主键生成器数据中心ID(0~3  1)

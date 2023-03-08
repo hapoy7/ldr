@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.padual.com/java/logback.xsd">
+	<!-- "%d[%p]%t[%F:%L]:%m%t%n" [%blue(%d)][%red(%p)][%green(%F:%L)]%blue(%m)[%t]%n -->
+	<property name="default-pattern" value="%d[%p][%F:%L]:%m%n" />
+	<springProperty name="app-name" source="spring.application.name" />
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${default-pattern}</pattern>
+		</encoder>
+	</appender>
+	<logger name="springfox.documentation" level="OFF" />
+<!-- 	<logger name="org.springframework.jdbc.core.StatementCreatorUtils" level="trace" /> -->
+<!-- 	<logger name="org.springframework.jdbc.core" level="trace" /> -->
+	<root level="info">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>

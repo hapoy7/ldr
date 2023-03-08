@@ -1,0 +1,67 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : localhost_3306
+ Source Server Type    : MySQL
+ Source Server Version : 80029
+ Source Host           : localhost:3306
+ Source Schema         : chest
+
+ Target Server Type    : MySQL
+ Target Server Version : 80029
+ File Encoding         : 65001
+
+ Date: 23/02/2023 11:09:37
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for sys_user
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_user`;
+CREATE TABLE `sys_user`  (
+  `user_id` bigint NOT NULL DEFAULT 0 COMMENT '主键',
+  `ldh_user_id` bigint NULL DEFAULT NULL COMMENT '兰德华UserId',
+  `number` mediumint NULL DEFAULT NULL COMMENT '编号',
+  `name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '名称',
+  `login_name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '登录名',
+  `password` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '密码',
+  `card_no` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_zh_0900_as_cs NULL DEFAULT NULL COMMENT '卡号',
+  `group_number` smallint NULL DEFAULT NULL COMMENT '分组',
+  `dept_id` bigint NULL DEFAULT NULL COMMENT '机构ID',
+  `dept_name` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_zh_0900_as_cs NULL DEFAULT NULL COMMENT '部门名称',
+  `status` tinyint NULL DEFAULT NULL COMMENT '状态',
+  `avatar` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '头像',
+  `fingerprint_count` tinyint NULL DEFAULT NULL COMMENT '指纹数量',
+  `type` tinyint NULL DEFAULT NULL COMMENT '人员类型1永久2临时',
+  `sync_type` tinyint NULL DEFAULT 0 COMMENT '同步类型1新增2更新',
+  `sync_flag` tinyint NULL DEFAULT 0 COMMENT '同步标记0已同步1需同步',
+  `remark` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '备注',
+  `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
+  `create_by` bigint NULL DEFAULT NULL COMMENT '创建人ID',
+  `update_by` bigint NULL DEFAULT NULL COMMENT '修改人ID',
+  `update_time` datetime NULL DEFAULT NULL COMMENT '修改时间',
+  `dr` tinyint NOT NULL DEFAULT 0 COMMENT '删除标记',
+  PRIMARY KEY (`user_id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_zh_0900_as_cs COMMENT = '用户' ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of sys_user
+-- ----------------------------
+INSERT INTO `sys_user` VALUES (10000, 10000, 1, '管理员', 'admin', '827ccb0eea8a706c4c34a16891f84e7b', '1234', 1, 504670504792231946, '开发部', 1, 'sys/001.jpg', 1, 2, 2, 1, '测试数据', NULL, NULL, NULL, '2022-12-27 14:56:36', 0);
+INSERT INTO `sys_user` VALUES (10001, 10001, 1234, '销售员', 'sale', '827ccb0eea8a706c4c34a16891f84e7b', '1234', 1, 504670504792231947, '市场部', 1, 'sys/001.jpg', 1, 1, 2, 1, '测试数据', NULL, NULL, NULL, '2022-12-27 14:56:36', 0);
+INSERT INTO `sys_user` VALUES (475444439934832640, 475444439934832640, 1, '莱德瑞', NULL, '123456', '0122E22E', 1, 10000000000000000, '系统部门', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 1, '2023-02-23 10:18:03', 0);
+INSERT INTO `sys_user` VALUES (477222789212803072, 477222789212803072, 123, '城里的', NULL, '123456', '', 1, 10000000000000000, '系统部门', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 1, '2023-02-23 10:18:03', 0);
+INSERT INTO `sys_user` VALUES (479342929731653772, 479342929731653772, 1072, 'wangwu22', NULL, '123456', 'FFFFFFFF', 1, 10000000000000000, '系统部门', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 1, '2023-02-23 10:12:15', 0);
+INSERT INTO `sys_user` VALUES (479342929731653773, 479342929731653773, 1073, 'wangwu666', NULL, '123456', 'FFFFFFFF', 1, 10000000000000000, '系统部门', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 1, '2023-02-23 10:18:03', 0);
+INSERT INTO `sys_user` VALUES (479342929731653774, 479342929731653774, 1074, '赵六', NULL, '123456', 'FFFFFFFF', 1, 10000000000000000, '系统部门', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 1, '2023-02-23 10:18:03', 0);
+INSERT INTO `sys_user` VALUES (480447886597820416, 480447886597820416, 1594, '', NULL, '5678', '', 1, 10000000000000000, '系统部门', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 1, '2023-02-23 10:18:03', 0);
+INSERT INTO `sys_user` VALUES (480511706175377408, 480511706175377408, 1785, 'yg', NULL, '123456', '', 1, 10000000000000000, '系统部门', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 1, '2023-02-23 10:18:03', 0);
+INSERT INTO `sys_user` VALUES (480527990682292224, 480527990682292224, 1524, 'yl', NULL, '009199', '', 1, 10000000000000000, '系统部门', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 1, '2023-02-23 10:18:03', 0);
+INSERT INTO `sys_user` VALUES (489849095343575040, 489849095343575040, 123456, 'zyq', NULL, '123456', '', 1, 10000000000000000, '系统部门', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 1, '2023-02-23 10:18:03', 0);
+INSERT INTO `sys_user` VALUES (505439072731271168, 505439072731271168, 666999, 'HJQ', NULL, '123456', '', 1, 10000000000000000, '系统部门', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 1, '2023-02-23 10:18:03', 0);
+INSERT INTO `sys_user` VALUES (524640013170774016, 524640013170774016, 972, '王浩', NULL, '123456', '', 1, 10000000000000000, '系统部门', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 1, '2023-02-23 10:18:03', 1);
+
+SET FOREIGN_KEY_CHECKS = 1;

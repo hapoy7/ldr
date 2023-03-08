@@ -1,0 +1,10 @@
+ACK_SUCCESS 0x00 //操作成功
+#define ACK_FAIL 0x01 //操作失败
+#define ACK_FULL 0x04 //指纹数据库已满
+#define ACK_NOUSER 0x05 //无此用户
+#define ACK_USER_EXIST 0x06 //用户已存在
+#define ACK_TIMEOUT 0x08 //采集超时
+
+F52C 0002 00 002E F5F500 0000 2300 F5
+
+00000000

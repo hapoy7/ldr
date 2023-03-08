@@ -1,0 +1,2 @@
+INSERT INTO sys_parameter (id, group_name, param_name, param_key, param_value, remark, create_time, create_by, update_time, update_by, dr) 
+ VALUES ('504681018024787969', '1', '1', '1', '1', '1', '2021-04-20 23:42:11', '10000', '2021-04-25 23:46:43', '10000', '0');

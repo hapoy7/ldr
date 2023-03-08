@@ -1,0 +1,10 @@
+spring:
+   datasource:
+      url: jdbc:mysql://localhost/chest?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+      username: root
+      password: root
+#自定义配置
+   rootpath: ${ROOT_PATH:D:/nginx/html/} ##${}兼容docker
+   rooturl: http://${ROOT_URL:localhost}/
+   workerId: 0 #主键生成器服务ID(0~31)
+   dataCenterId: 0 #主键生成器数据中心ID(0~31)
